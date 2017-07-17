@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'tar -czvf flask_hello.tar.gz hello'
+        sh '''mkdir hello
+mv hello.py requirements.txt hello
+tar -czvf flask_hello.tar.gz hello'''
       }
     }
   }
